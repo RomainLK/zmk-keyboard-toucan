@@ -1,0 +1,136 @@
+draw_config:
+  n_columns: 2
+  separate_combo_diagrams: true
+  combo_diagrams_scale: 2
+  dark_mode: auto
+  footer_text: ''
+  key_w: 60
+  key_h: 56
+  split_gap: 30
+  combo_w: 28
+  combo_h: 26
+  shrink_wide_legends: 7
+  glyph_tap_size: 14
+  glyph_hold_size: 12
+  glyph_shifted_size: 10
+
+parse_config:
+  raw_binding_map:
+    # French accents (Mac)
+    '&mmacircumflex': {t: â, s: Â}
+    '&mmagrave': {t: à, s: À}
+    '&mmecircumflex': {t: ê, s: Ê}
+    '&mmecute': {t: é, s: É}
+    '&mmegrave': {t: è, s: È}
+    '&mmediaresis': {t: ë, s: Ë}
+    '&mccedilla': {t: ç, s: Ç}
+    '&mmucircumflex': {t: û, s: Û}
+    '&mmugrave': {t: ù, s: Ù}
+    '&mmicircumflex': {t: î, s: Î}
+    '&mmidiaresis': {t: ï, s: Ï}
+    '&mmocircumflex': {t: ô, s: Ô}
+    # French accents (Mac) - internal macro refs used in combos
+    '&macircumflex': â
+    '&mcacircumflex': Â
+    '&magrave': à
+    '&mcagrave': À
+    '&mecircumflex': ê
+    '&mcecircumflex': Ê
+    '&mecute': é
+    '&mcecute': É
+    '&megrave': è
+    '&mcegrave': È
+    '&mediaresis': ë
+    '&mcediaresis': Ë
+    '&mucircumflex': û
+    '&mcucircumflex': Û
+    '&mugrave': ù
+    '&mcugrave': Ù
+    '&micircumflex': î
+    '&mcicircumflex': Î
+    '&midiaresis': ï
+    '&mcidiaresis': Ï
+    '&mocircumflex': ô
+    '&mcocircumflex': Ô
+    # French accents (Windows alt-codes)
+    '&fr_a_grave': {t: à, s: À}
+    '&fr_a_circumflex': {t: â, s: Â}
+    '&fr_c_cedilla': {t: ç, s: Ç}
+    '&fr_e_grave': {t: è, s: È}
+    '&fr_e_acute': {t: é, s: É}
+    '&fr_e_circumflex': {t: ê, s: Ê}
+    '&fr_e_diaeresis': {t: ë, s: Ë}
+    '&fr_i_circumflex': {t: î, s: Î}
+    '&fr_i_diaeresis': {t: ï, s: Ï}
+    '&fr_o_circumflex': {t: ô, s: Ô}
+    '&fr_u_grave': {t: ù, s: Ù}
+    '&fr_u_circumflex': {t: û, s: Û}
+    '&fr_a_grave_lower': à
+    '&fr_a_grave_upper': À
+    '&fr_a_circumflex_lower': â
+    '&fr_a_circumflex_upper': Â
+    '&fr_c_cedilla_lower': ç
+    '&fr_c_cedilla_upper': Ç
+    '&fr_e_grave_lower': è
+    '&fr_e_grave_upper': È
+    '&fr_e_acute_lower': é
+    '&fr_e_acute_upper': É
+    '&fr_e_circumflex_lower': ê
+    '&fr_e_circumflex_upper': Ê
+    '&fr_e_diaeresis_lower': ë
+    '&fr_e_diaeresis_upper': Ë
+    '&fr_i_circumflex_lower': î
+    '&fr_i_circumflex_upper': Î
+    '&fr_i_diaeresis_lower': ï
+    '&fr_i_diaeresis_upper': Ï
+    '&fr_o_circumflex_lower': ô
+    '&fr_o_circumflex_upper': Ô
+    '&fr_u_grave_lower': ù
+    '&fr_u_grave_upper': Ù
+    '&fr_u_circumflex_lower': û
+    '&fr_u_circumflex_upper': Û
+    # Custom behaviors
+    '&euro_sign': {t: €}
+    '&euro_sign_lower': €
+    '&arrowfunction': '=>'
+    '&closinghtmltag': '</'
+    '&win_swapper': Alt+Tab
+    '&swapper': Gui+Tab
+    # Layer switching
+    '&u_to_U_BASE': '→Base'
+    '&u_to_U_EXTRA': '→Extra'
+    '&u_to_U_TAP': '→Tap'
+    '&u_to_U_MBASE': '→MBase'
+    '&u_to_U_NAV': '→Nav'
+    '&u_to_U_MOUSE': '→Mouse'
+    '&u_to_U_MEDIA': '→Media'
+    '&u_to_U_NUM': '→Num'
+    '&u_to_U_SYM': '→Sym'
+    '&u_to_U_FUN': '→Fun'
+    '&u_to_U_MNAV': '→MNav'
+    '&u_to_U_MMOUSE': '→MMouse'
+    '&u_to_U_MMEDIA': '→MMedia'
+    '&u_to_U_MNUM': '→MNum'
+    '&u_to_U_MSYM': '→MSym'
+    '&u_to_U_MFUN': '→MFun'
+    # Bootloader
+    '&bootloader': BOOT
+    # Mouse
+    '&mkp MB1': MB1
+    '&mkp MB2': MB2
+    '&mkp MB3': MB3
+    '&mmv MOVE_LEFT': 'Ms ←'
+    '&mmv MOVE_DOWN': 'Ms ↓'
+    '&mmv MOVE_UP': 'Ms ↑'
+    '&mmv MOVE_RIGHT': 'Ms →'
+    '&msc SCRL_LEFT': 'Scr ←'
+    '&msc SCRL_DOWN': 'Scr ↓'
+    '&msc SCRL_UP': 'Scr ↑'
+    '&msc SCRL_RIGHT': 'Scr →'
+    # BT shift functions
+    '&u_macro_u_bt_sel_0': BT CLR
+    '&u_macro_u_bt_sel_1': BT CLR
+    '&u_macro_u_bt_sel_2': BT CLR
+    '&u_macro_u_bt_sel_3': BT CLR
+    # Caps word
+    '&caps_word': CapsW

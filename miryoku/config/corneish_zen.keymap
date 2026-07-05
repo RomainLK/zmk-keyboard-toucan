@@ -1,0 +1,5 @@
+/*
+ * Miryoku keymap for Corneish Zen v2
+ */
+
+#include "../miryoku.dtsi"

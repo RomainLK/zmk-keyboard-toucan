@@ -1,0 +1,38 @@
+// / {
+//     combos {
+//         compatible = "zmk,combos";
+//         combo_grave {
+//             timeout-ms = <50>;
+//             key-positions = <2 3>;
+//             bindings = <&fr_a_grave>;
+//         };
+//     };
+// };
+
+// / {
+//     combos   {
+//         compatible = "zmk,combos";
+//         combo_qccute {
+//             timeout-ms = <50>;
+//             key-positions = <3 4>;
+//             bindings = <&kp GRAVE>;
+//         };
+//     };
+// };
+
+// / {
+//     combos_circonflexe {
+//         compatible = "zmk,combos";
+//         combo_esc {
+//             timeout-ms = <50>;
+//             key-positions = <2 3 4>;
+//             bindings = <&kp GRAVE>;
+//         };
+//     };
+// };
+
+// Space+Tab combo - holds SPACE when both are pressed
+// Position 37 = SPACE (LH1), Position 38 = TAB (LH0)
+ZMK_COMBO(space_tab_win, &kp SPACE, LH1 LH0, U_BASE)
+ZMK_COMBO(space_tab_mac, &kp SPACE, LH1 LH0, U_MBASE)
+

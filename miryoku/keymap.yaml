@@ -1,0 +1,834 @@
+layout: {zmk_keyboard: corneish_zen}
+layers:
+  Base:
+  - ''
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - ''''
+  - ''
+  - ''
+  - {t: A, h: LGUI}
+  - {t: R, h: LALT}
+  - {t: S, h: LCTRL}
+  - {t: T, h: LSHFT}
+  - G
+  - M
+  - {t: N, h: LSHFT}
+  - {t: E, h: LCTRL}
+  - {t: I, h: LALT}
+  - {t: O, h: LGUI}
+  - ''
+  - ''
+  - {t: Z, h: Button}
+  - {t: X, h: RALT}
+  - C
+  - D
+  - V
+  - K
+  - H
+  - ','
+  - {t: ., h: RALT}
+  - {t: /, h: Button}
+  - ''
+  - {t: ESC, h: Media}
+  - {t: SPACE, h: Nav}
+  - {t: TAB, h: Mouse}
+  - {t: RET, h: Num}
+  - {t: BSPC, h: Sym}
+  - {t: DEL, h: Fun}
+  Extra:
+  - ''
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - ''
+  - ''
+  - {t: A, h: LGUI}
+  - {t: S, h: LALT}
+  - {t: D, h: LCTRL}
+  - {t: F, h: LSHFT}
+  - G
+  - H
+  - {t: J, h: LSHFT}
+  - {t: K, h: LCTRL}
+  - {t: L, h: LALT}
+  - {t: '''', h: LGUI}
+  - ''
+  - ''
+  - {t: Z, h: Button}
+  - {t: X, h: RALT}
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - {t: ., h: RALT}
+  - {t: /, h: Button}
+  - ''
+  - {t: ESC, h: Media}
+  - {t: SPACE, h: Nav}
+  - {t: TAB, h: Mouse}
+  - {t: RET, h: Sym}
+  - {t: BSPC, h: Num}
+  - {t: DEL, h: Fun}
+  Tap: ['', Q, W, F, P, B, J, L, U, Y, '''', '', '', A, R, S, T, G, M, N, E, I, O, '', '', Z, X, C, D, V, K, H, ',', ., /, '', ESC, SPACE, TAB, RET, BSPC, DEL]
+  Button:
+  - ''
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
+  - Ctl+Y
+  - Ctl+Y
+  - Ctl+V
+  - Ctl+C
+  - Ctl+X
+  - Ctl+Z
+  - ''
+  - ''
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHFT
+  - ''
+  - ''
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LGUI
+  - ''
+  - ''
+  - {t: Ctl+Z, type: held}
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
+  - Ctl+Y
+  - Ctl+Y
+  - Ctl+V
+  - Ctl+C
+  - Ctl+X
+  - Ctl+Z
+  - ''
+  - MB3
+  - MB1
+  - MB2
+  - MB2
+  - MB1
+  - MB3
+  Nav:
+  - ''
+  - ''
+  - Gui+Sft+S
+  - Ctl+S
+  - F5
+  - F12
+  - Ctl+Y
+  - Ctl+V
+  - Ctl+C
+  - Ctl+X
+  - Ctl+Z
+  - ''
+  - ''
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHFT
+  - ''
+  - {t: CapsW, s: CAPS}
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - ''
+  - ''
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - BSPC
+  - Ctl+V
+  - INS
+  - HOME
+  - PG DN
+  - PG UP
+  - END
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - RET
+  - BSPC
+  - DEL
+  Mouse:
+  - ''
+  - BOOT
+  - →Tap
+  - →Extra
+  - →Base
+  - ''
+  - Ctl+Y
+  - Ctl+V
+  - Ctl+C
+  - Ctl+X
+  - Ctl+Z
+  - ''
+  - ''
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHFT
+  - ''
+  - ''
+  - Ms ←
+  - Ms ↓
+  - Ms ↑
+  - Ms →
+  - ''
+  - ''
+  - ''
+  - RALT
+  - →Sym
+  - →Mouse
+  - ''
+  - ''
+  - Scr ←
+  - Scr ↓
+  - Scr ↑
+  - Scr →
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - MB2
+  - MB1
+  - MB3
+  Media:
+  - ''
+  - BOOT
+  - →Tap
+  - →Extra
+  - →Base
+  - →MBase
+  - KP NUMLOCK
+  - RGB EFF
+  - VOL UP
+  - RGB HUI
+  - RGB SAI
+  - ''
+  - ''
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHFT
+  - ''
+  - EP TOG
+  - PREV
+  - VOL DN
+  - NEXT
+  - RGB BRI
+  - ''
+  - ''
+  - ''
+  - RALT
+  - →Fun
+  - →Media
+  - ''
+  - {t: OUT TOG, s: OUT USB}
+  - {t: BT, h: '0', s: BT CLR}
+  - {t: BT, h: '1', s: BT CLR}
+  - {t: BT, h: '2', s: BT CLR}
+  - {t: BT, h: '3', s: BT CLR}
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - STOP
+  - PP
+  - MUTE
+  Num:
+  - ''
+  - '*'
+  - '7'
+  - '8'
+  - '9'
+  - +
+  - ''
+  - →Base
+  - →Extra
+  - →Tap
+  - BOOT
+  - ''
+  - ''
+  - €
+  - '4'
+  - '5'
+  - '6'
+  - '='
+  - ''
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LGUI
+  - ''
+  - ''
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - \
+  - ''
+  - →Num
+  - →Mouse
+  - RALT
+  - ''
+  - ''
+  - .
+  - '0'
+  - '-'
+  - {type: held}
+  - ''
+  - ''
+  Sym:
+  - ''
+  - '%'
+  - '#'
+  - ;
+  - ':'
+  - '!'
+  - ''
+  - →Base
+  - →Extra
+  - →Tap
+  - BOOT
+  - ''
+  - ''
+  - '@'
+  - $
+  - '{'
+  - '}'
+  - '|'
+  - ''
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LGUI
+  - ''
+  - ''
+  - '~'
+  - ^
+  - '['
+  - ']'
+  - '&'
+  - ''
+  - →Sym
+  - →Nav
+  - RALT
+  - ''
+  - ''
+  - (
+  - )
+  - _
+  - ''
+  - {type: held}
+  - ''
+  Fun:
+  - ''
+  - F12
+  - F7
+  - F8
+  - F9
+  - PSCRN
+  - ''
+  - →Base
+  - →Extra
+  - →Tap
+  - BOOT
+  - ''
+  - ''
+  - F11
+  - F4
+  - F5
+  - F6
+  - SLCK
+  - ''
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LGUI
+  - ''
+  - ''
+  - F10
+  - F1
+  - F2
+  - F3
+  - PAUSE BREAK
+  - ''
+  - →Fun
+  - →Media
+  - RALT
+  - ''
+  - ''
+  - APP
+  - SPACE
+  - TAB
+  - ''
+  - ''
+  - {type: held}
+  MBase:
+  - ''
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - ''''
+  - ''
+  - ''
+  - {t: A, h: LCTRL}
+  - {t: R, h: LALT}
+  - {t: S, h: LGUI}
+  - {t: T, h: LSHFT}
+  - G
+  - M
+  - {t: N, h: LSHFT}
+  - {t: E, h: LGUI}
+  - {t: I, h: LALT}
+  - {t: O, h: LCTRL}
+  - ''
+  - ''
+  - {t: Z, h: MButton}
+  - {t: X, h: RALT}
+  - C
+  - D
+  - V
+  - K
+  - H
+  - ','
+  - {t: ., h: RALT}
+  - {t: /, h: MButton}
+  - ''
+  - {t: ESC, h: MMedia}
+  - {t: SPACE, h: MNav}
+  - {t: TAB, h: MMouse}
+  - {t: RET, h: MNum}
+  - {t: BSPC, h: MSym}
+  - {t: DEL, h: MFun}
+  MButton:
+  - ''
+  - Gui+Z
+  - Gui+X
+  - Gui+C
+  - Gui+V
+  - Sft+Gui+Z
+  - Sft+Gui+Z
+  - Gui+V
+  - Gui+C
+  - Gui+X
+  - Gui+Z
+  - ''
+  - ''
+  - LCTRL
+  - LALT
+  - LGUI
+  - LSHFT
+  - ''
+  - ''
+  - LSHFT
+  - LGUI
+  - LALT
+  - LCTRL
+  - ''
+  - ''
+  - {t: Gui+Z, type: held}
+  - Gui+X
+  - Gui+C
+  - Gui+V
+  - Sft+Gui+Z
+  - Sft+Gui+Z
+  - Gui+V
+  - Gui+C
+  - Gui+X
+  - Gui+Z
+  - ''
+  - MB3
+  - MB1
+  - MB2
+  - MB2
+  - MB1
+  - MB3
+  MMedia:
+  - ''
+  - BOOT
+  - →Tap
+  - →Extra
+  - →Base
+  - ''
+  - RGB TOG
+  - RGB EFF
+  - RGB HUI
+  - RGB SAI
+  - RGB BRI
+  - ''
+  - ''
+  - LCTRL
+  - LALT
+  - LGUI
+  - LSHFT
+  - ''
+  - EP TOG
+  - PREV
+  - VOL DN
+  - VOL UP
+  - NEXT
+  - ''
+  - ''
+  - ''
+  - RALT
+  - →MFun
+  - →MMedia
+  - ''
+  - {t: OUT TOG, s: OUT USB}
+  - {t: BT, h: '0', s: BT CLR}
+  - {t: BT, h: '1', s: BT CLR}
+  - {t: BT, h: '2', s: BT CLR}
+  - {t: BT, h: '3', s: BT CLR}
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - STOP
+  - PP
+  - MUTE
+  MNav:
+  - ''
+  - ''
+  - Gui+Sft+4
+  - Gui+S
+  - Gui+R
+  - Gui+Alt+I
+  - Sft+Gui+Z
+  - Gui+V
+  - Gui+C
+  - Gui+X
+  - Gui+Z
+  - ''
+  - ''
+  - LCTRL
+  - LALT
+  - LGUI
+  - LSHFT
+  - ''
+  - {t: CapsW, s: CAPS}
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - ''
+  - ''
+  - Gui+Z
+  - Gui+X
+  - Gui+C
+  - BSPC
+  - Gui+V
+  - INS
+  - HOME
+  - PG DN
+  - PG UP
+  - END
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - RET
+  - BSPC
+  - DEL
+  MMouse:
+  - ''
+  - BOOT
+  - →Tap
+  - →Extra
+  - →Base
+  - ''
+  - Sft+Gui+Z
+  - Gui+V
+  - Gui+C
+  - Gui+X
+  - Gui+Z
+  - ''
+  - ''
+  - LCTRL
+  - LALT
+  - LGUI
+  - LSHFT
+  - ''
+  - ''
+  - Ms ←
+  - Ms ↓
+  - Ms ↑
+  - Ms →
+  - ''
+  - ''
+  - ''
+  - RALT
+  - →MNum
+  - →MMouse
+  - ''
+  - ''
+  - Scr ←
+  - Scr ↓
+  - Scr ↑
+  - Scr →
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - MB2
+  - MB1
+  - MB3
+  MSym:
+  - ''
+  - '%'
+  - Alt+3
+  - ;
+  - ':'
+  - '!'
+  - ''
+  - →Base
+  - →Extra
+  - →Tap
+  - BOOT
+  - ''
+  - ''
+  - '@'
+  - $
+  - '{'
+  - '}'
+  - '|'
+  - ''
+  - LSHFT
+  - LGUI
+  - LALT
+  - LCTRL
+  - ''
+  - ''
+  - '~'
+  - ^
+  - '['
+  - ']'
+  - '&'
+  - ''
+  - →MSym
+  - →MNav
+  - RALT
+  - ''
+  - ''
+  - (
+  - )
+  - _
+  - ''
+  - {type: held}
+  - ''
+  MNum:
+  - ''
+  - '*'
+  - '7'
+  - '8'
+  - '9'
+  - +
+  - ''
+  - →Base
+  - →Extra
+  - →Tap
+  - BOOT
+  - ''
+  - ''
+  - Alt+2
+  - '4'
+  - '5'
+  - '6'
+  - '='
+  - ''
+  - LSHFT
+  - LGUI
+  - LALT
+  - LCTRL
+  - ''
+  - ''
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - \
+  - ''
+  - →MNum
+  - →MMouse
+  - RALT
+  - ''
+  - ''
+  - .
+  - '0'
+  - '-'
+  - {type: held}
+  - ''
+  - ''
+  MFun:
+  - ''
+  - F12
+  - F7
+  - F8
+  - F9
+  - PSCRN
+  - ''
+  - →Base
+  - →Extra
+  - →Tap
+  - BOOT
+  - ''
+  - ''
+  - F11
+  - F4
+  - F5
+  - F6
+  - SLCK
+  - ''
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LCTRL
+  - ''
+  - ''
+  - F10
+  - F1
+  - F2
+  - F3
+  - PAUSE BREAK
+  - ''
+  - →MFun
+  - →MMedia
+  - RALT
+  - ''
+  - ''
+  - APP
+  - SPACE
+  - TAB
+  - ''
+  - ''
+  - {type: held}
+combos:
+- p: [3, 2, 1]
+  k: {t: â, s: Â}
+  l: [MBase]
+- p: [2, 1]
+  k: {t: à, s: À}
+  l: [MBase]
+- p: [4, 3, 2]
+  k: {t: ê, s: Ê}
+  l: [MBase]
+- p: [3, 2]
+  k: {t: é, s: É}
+  l: [MBase]
+- p: [4, 3]
+  k: {t: è, s: È}
+  l: [MBase]
+- p: [4, 2]
+  k: {t: ë, s: Ë}
+  l: [MBase]
+- p: [28, 27]
+  k: {t: ç, s: Ç}
+  l: [MBase]
+- p: [6, 7, 8]
+  k: {t: û, s: Û}
+  l: [MBase]
+- p: [7, 8]
+  k: {t: ù, s: Ù}
+  l: [MBase]
+- p: [7, 8, 9]
+  k: {t: î, s: Î}
+  l: [MBase]
+- p: [7, 9]
+  k: {t: ï, s: Ï}
+  l: [MBase]
+- p: [9, 10]
+  k: {t: ô, s: Ô}
+  l: [MBase]
+- p: [29, 17]
+  k: Alt+Tab
+  l: [Base]
+- p: [29, 17]
+  k: Gui+Tab
+  l: [MBase]
+- p: [5, 17]
+  k: Gui+`
+  l: [MBase]
+- p: [27, 15]
+  k: Ctl+LEFT
+  l: [MBase]
+- p: [28, 16]
+  k: Ctl+RIGHT
+  l: [MBase]
+- p: [17, 16]
+  k: =>
+  l: [Num, MNum]
+- p: [33, 34]
+  k: </
+  l: [Base, MBase]
+- p: [3, 2, 1]
+  k: {t: â, s: Â}
+  l: [Base]
+- p: [2, 1]
+  k: {t: à, s: À}
+  l: [Base]
+- p: [3, 2]
+  k: {t: é, s: É}
+  l: [Base]
+- p: [4, 3]
+  k: {t: è, s: È}
+  l: [Base]
+- p: [4, 3, 2]
+  k: {t: ê, s: Ê}
+  l: [Base]
+- p: [4, 2]
+  k: {t: ë, s: Ë}
+  l: [Base]
+- p: [28, 27]
+  k: {t: ç, s: Ç}
+  l: [Base]
+- p: [6, 7, 8]
+  k: {t: û, s: Û}
+  l: [Base]
+- p: [7, 8]
+  k: {t: ù, s: Ù}
+  l: [Base]
+- p: [7, 8, 9]
+  k: {t: î, s: Î}
+  l: [Base]
+- p: [7, 9]
+  k: {t: ï, s: Ï}
+  l: [Base]
+- p: [9, 10]
+  k: {t: ô, s: Ô}
+  l: [Base]
+- p: [37, 38]
+  k: SPACE
+  l: [Base]
+- p: [37, 38]
+  k: SPACE
+  l: [MBase]

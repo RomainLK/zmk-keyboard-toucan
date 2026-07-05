@@ -1,0 +1,12 @@
+/ {
+  behaviors {
+    ul_mt: ul_mt {
+      compatible = "zmk,behavior-hold-tap";
+      label = "ul_mt";
+      #binding-cells = <2>;
+      tapping_term_ms = <300>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    };
+  };
+};
