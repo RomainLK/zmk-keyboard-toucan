@@ -109,9 +109,9 @@
         device = <&glidepoint_split>;
         input-processors = <&zip_xy_scaler 250 100>;
         scroller {
-            // Miryoku mouse/nav layers (U_NAV=4, U_MOUSE=5 from miryoku/custom_config.h),
-            // replacing the stock keymap's layers 1 2 which are U_EXTRA/U_TAP in Miryoku.
-            layers = <4 5>;
+            // Miryoku mouse/nav layers, both the default and Mac sets (custom_config.h):
+            // U_NAV=4, U_MOUSE=5, U_MNAV=13, U_MMOUSE=14.
+            layers = <4 5 13 14>;
             input-processors = <
                 &zip_xy_to_scroll_mapper
                 &zip_scroll_scaler 1 5
