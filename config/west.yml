@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: geeksville
       url-base: https://github.com/geeksville
+    - name: dhruvinsh
+      url-base: https://github.com/dhruvinsh
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -20,5 +22,12 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
+    # Provides the zmk,behavior-tri-state driver used by Miryoku's alt-tab/cmd-tab
+    # swappers (win_swapper/swapper). Mainline ZMK never merged tri-state; the Zen
+    # fork has it built in. Module targets Zephyr 3.5, matching ZMK v0.3. The driver
+    # auto-enables from the DT node (no Kconfig needed). Pinned to an immutable commit.
+    - name: zmk-tri-state
+      remote: dhruvinsh
+      revision: ebbc1f0ccdb51669650bb0ac3e34920d09e62400
   self:
     path: config
