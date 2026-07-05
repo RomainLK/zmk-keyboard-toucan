@@ -2,7 +2,6 @@
 #include "battery.h"
 #include "../assets/custom_fonts.h"
 
-LV_IMG_DECLARE(bolt);
 LV_IMG_DECLARE(l_battery_100);
 LV_IMG_DECLARE(l_battery_90);
 LV_IMG_DECLARE(l_battery_75);
@@ -32,6 +31,25 @@ static void draw_level(lv_obj_t *canvas, const struct status_state *state) {
 
 }
 
+// A lightning bolt drawn in the free strip above the left battery to signal that
+// this (central) half is receiving USB power. Shape is Material's "flash" glyph
+// scaled to ~6x10 px; a filled white polygon avoids occluding the battery icon
+// the way an opaque INDEXED_1BIT image would. Only drawn when charging.
+static void draw_charging(lv_obj_t *canvas, const struct status_state *state) {
+    if (!state->charging) {
+        return;
+    }
+
+    lv_draw_rect_dsc_t bolt_dsc;
+    init_rect_dsc(&bolt_dsc, LVGL_FOREGROUND);
+
+    static const lv_point_t bolt[] = {
+        {35, 0}, {35, 6}, {37, 6}, {37, 10}, {41, 4}, {39, 4}, {41, 0},
+    };
+    lv_canvas_draw_polygon(canvas, bolt, ARRAY_SIZE(bolt), &bolt_dsc);
+}
+
 void draw_battery_status(lv_obj_t *canvas, const struct status_state *state) {
     draw_level(canvas, state);
+    draw_charging(canvas, state);
 }
