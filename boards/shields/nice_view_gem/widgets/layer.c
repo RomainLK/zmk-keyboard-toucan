@@ -40,6 +40,6 @@ void draw_layer_status(lv_obj_t *canvas, const struct status_state *state) {
     if (mac_mode) {
         lv_draw_img_dsc_t img_dsc;
         lv_draw_img_dsc_init(&img_dsc);
-        lv_canvas_draw_img(canvas, 60, 40, &apple_logo, &img_dsc);
+        lv_canvas_draw_img(canvas, 56, 34, &apple_logo, &img_dsc); // 32x32, centered (144-32)/2
     }
 }
