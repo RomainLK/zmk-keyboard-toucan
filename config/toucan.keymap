@@ -4,6 +4,9 @@
  * The Toucan's default_transform has 42 positions; Miryoku's mapping/42/corne.h
  * emits 42 bindings with the outer pinky column set to &none, which lines up
  * exactly with the six switches the 36-key board omits. Drop-in, no renumbering.
+ *
+ * miryoku/ lives under config/ (not repo root) so it travels inside ZMK_CONFIG in
+ * the GitHub Actions build (self.path is "config").
  */
 
-#include "../miryoku/miryoku.dtsi"
+#include "miryoku/miryoku.dtsi"
