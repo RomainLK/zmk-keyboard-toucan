@@ -10,15 +10,25 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: geeksville
       url-base: https://github.com/geeksville
+    - name: RomainLK
+      url-base: https://github.com/RomainLK
     - name: dhruvinsh
       url-base: https://github.com/dhruvinsh
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
+    # Fork of geeksville/cirque-input-module @ toucan with a fix: the Pinnacle
+    # driver's work handler now always re-enables the data-ready interrupt. The
+    # upstream toucan branch left the level-triggered DR interrupt masked forever
+    # whenever the read path early-returned (comm 0xFF glitch, or the HW-DR-before-
+    # SW-DR race that is common under sustained motion), which wedged the trackpad
+    # and — via the shared nRF GPIO SENSE/PORT event — the key matrix on the same
+    # half, until it was power-cycled. Pinned to an immutable commit.
+    # Fork branch: toucan-fix-dr-reenable. Rebase onto geeksville/toucan to update.
     - name: cirque-input-module
-      remote: geeksville
-      revision: toucan
+      remote: RomainLK
+      revision: 51fe50450a3e714ef7ffca1f3be5dfc7f737046a
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
