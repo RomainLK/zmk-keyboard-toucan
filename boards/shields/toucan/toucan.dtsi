@@ -108,14 +108,25 @@
         status = "disabled";
         device = <&glidepoint_split>;
         input-processors = <&zip_xy_scaler 250 100>;
+        // Miryoku mouse/nav layers (custom_config.h): default set U_NAV=4, U_MOUSE=5;
+        // Mac mirror set U_MNAV=13, U_MMOUSE=14. Split into two scrollers so the Mac
+        // layers match macOS "natural scrolling", which inverts both axes relative to
+        // the default (Windows/Linux) layers. Since the default already inverts X,
+        // "natural" = drop X_INVERT (flip horizontal) and add Y_INVERT (flip vertical).
         scroller {
-            // Miryoku mouse/nav layers, both the default and Mac sets (custom_config.h):
-            // U_NAV=4, U_MOUSE=5, U_MNAV=13, U_MMOUSE=14.
-            layers = <4 5 13 14>;
+            layers = <4 5>;
             input-processors = <
                 &zip_xy_to_scroll_mapper
                 &zip_scroll_scaler 1 5
                 &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
+            >;
+        };
+        mac_scroller {
+            layers = <13 14>;
+            input-processors = <
+                &zip_xy_to_scroll_mapper
+                &zip_scroll_scaler 1 5
+                &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
             >;
         };
     };
