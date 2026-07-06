@@ -18,17 +18,20 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
-    # Fork of geeksville/cirque-input-module @ toucan with a fix: the Pinnacle
-    # driver's work handler now always re-enables the data-ready interrupt. The
-    # upstream toucan branch left the level-triggered DR interrupt masked forever
-    # whenever the read path early-returned (comm 0xFF glitch, or the HW-DR-before-
-    # SW-DR race that is common under sustained motion), which wedged the trackpad
-    # and — via the shared nRF GPIO SENSE/PORT event — the key matrix on the same
-    # half, until it was power-cycled. Pinned to an immutable commit.
-    # Fork branch: toucan-fix-dr-reenable. Rebase onto geeksville/toucan to update.
+    # Fork of geeksville/cirque-input-module @ toucan with two fixes for the
+    # right half losing all input after sustained trackpad use (verified on HW):
+    #  1. Cap the Pinnacle sample rate at 60 sps (was 100) and make input_report_*
+    #     non-blocking, so a fast finger can't flood the ZMK split BLE notification
+    #     path and deadlock the peripheral TX pipeline (sysworkq + input thread +
+    #     BT TX) — the actual root cause of the wedge.
+    #  2. Always re-enable the data-ready interrupt in the work handler (a latent
+    #     bug: an early-return read path could leave the level-triggered DR int
+    #     masked forever).
+    # Pinned to an immutable commit. Fork branch: toucan-fix-dr-reenable.
+    # Rebase onto geeksville/toucan to pull upstream changes.
     - name: cirque-input-module
       remote: RomainLK
-      revision: 51fe50450a3e714ef7ffca1f3be5dfc7f737046a
+      revision: 992e2a8d4673f440c0b98546d9891b9a2027afa7
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
