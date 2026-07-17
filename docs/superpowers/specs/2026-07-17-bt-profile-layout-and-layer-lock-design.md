@@ -125,13 +125,13 @@ tests manuels :
 
 ---
 
-## Feature 2 — Toggle-lock de layer (Nav, Num, Mouse + variantes Mac)
+## Feature 2 — Toggle-lock de layer (Nav, Num + variantes Mac)
 
 ### Objectif
 
 Verrouiller un layer momentané « à la demande » pour ne plus avoir à tenir le pouce, et
-le déverrouiller en re-tapant la même touche. Layers concernés : **Nav, Num, Mouse** et
-leurs variantes Mac (**MNav, MNum, MMouse**).
+le déverrouiller en re-tapant la même touche. Layers concernés : **Nav, Num** et leurs
+variantes Mac (**MNav, MNum**).
 
 ### Architecture
 
@@ -143,10 +143,8 @@ Sur chaque layer verrouillable, on ajoute une touche `&tog` pointant vers **lui-
 |---|---|
 | `U_NAV` | `&tog U_NAV` |
 | `U_NUM` | `&tog U_NUM` |
-| `U_MOUSE` | `&tog U_MOUSE` |
 | `U_MNAV` | `&tog U_MNAV` |
 | `U_MNUM` | `&tog U_MNUM` |
-| `U_MMOUSE` | `&tog U_MMOUSE` |
 
 ### Flux d'usage
 
@@ -167,14 +165,9 @@ au plan d'implémentation. Candidats identifiés :
   gauche libre).
 - `U_NUM` / `U_MNUM` : Num est activé par le pouce droit (RET), chiffres à gauche → viser
   un slot `U_NA` accessible.
-- `U_MOUSE` / `U_MMOUSE` : Mouse activé par le pouce gauche (TAB), déplacements à droite.
 
-### Détail — layer Win `MOUSE` non custom
-
-`U_NAV`, `U_NUM` et toutes les variantes Mac sont déjà redéfinis dans
-`custom_config.h`. En revanche le layer **Win `MOUSE` n'y est pas** : il vient du défaut
-Miryoku babel. Pour y ajouter la touche lock, il faudra **redéfinir
-`MIRYOKU_LAYER_MOUSE`** dans `custom_config.h` (copie du défaut + insertion du `&tog`).
+`U_NAV`, `U_NUM` et leurs variantes Mac sont tous déjà redéfinis dans `custom_config.h` :
+aucune redéfinition de layer par défaut Miryoku n'est nécessaire.
 
 ### Interaction `&tog` × système de base `&to`
 
@@ -188,7 +181,7 @@ Build + flash + test manuel :
 
 1. Tenir Space (Nav), taper la touche lock, lâcher Space → vérifier que Nav reste actif.
 2. Re-taper la touche lock → vérifier retour à la base.
-3. Répéter pour Num et Mouse, côté Win et côté Mac.
+3. Répéter pour Num, côté Win et côté Mac.
 4. Verrouiller Nav puis changer de base (Win↔Mac) → vérifier que le lock se libère.
 
 ---
