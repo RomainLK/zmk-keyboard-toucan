@@ -146,7 +146,7 @@ de position de zmk-helpers.
 et **restreint à ce layer**.
 
 - **Lock Num** — Num est activé par le pouce **droit** (RET) → combo côté **gauche** :
-  **B + G** = positions `LT4 LM4`.
+  **B + G** = positions `LT0 LM0`.
 - **Lock Nav** — Nav est activé par le pouce **gauche** (SPACE) → combo côté **droit** :
   **J + M** = positions `RT0 RM0`.
 
@@ -154,8 +154,8 @@ Soit 4 combos (une variante Win + une Mac par layer) :
 
 | Combo | Positions | Layer (restriction) | Binding |
 |---|---|---|---|
-| `num_lock_win` | `LT4 LM4` (B+G) | `U_NUM` | `&tog U_NUM` |
-| `num_lock_mac` | `LT4 LM4` (B+G) | `U_MNUM` | `&tog U_MNUM` |
+| `num_lock_win` | `LT0 LM0` (B+G) | `U_NUM` | `&tog U_NUM` |
+| `num_lock_mac` | `LT0 LM0` (B+G) | `U_MNUM` | `&tog U_MNUM` |
 | `nav_lock_win` | `RT0 RM0` (J+M) | `U_NAV` | `&tog U_NAV` |
 | `nav_lock_mac` | `RT0 RM0` (J+M) | `U_MNAV` | `&tog U_MNAV` |
 
