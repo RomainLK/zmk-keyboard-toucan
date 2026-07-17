@@ -36,3 +36,21 @@
 ZMK_COMBO(space_tab_win, &kp SPACE, LH1 LH0, U_BASE)
 ZMK_COMBO(space_tab_mac, &kp SPACE, LH1 LH0, U_MBASE)
 
+// ── Layer-lock combos (Feature 2) ───────────────────────────────────────────
+// Press the combo while holding the layer thumb → &tog locks the layer, so the
+// thumb can be released. The combo stays reachable (target layer still active)
+// → press it again to unlock and return to base.
+//
+// Convention: the two index-column keys (top + home) on the hand OPPOSITE the
+// activating thumb, restricted to the target layer:
+//   Num  (right thumb / RET)   → B + G = LT0 LM0   (left index column)
+//   Nav  (left thumb / SPACE)  → J + M = RT0 RM0   (right index column)
+//
+// require-prior-idle-ms = 150 stops the combo from firing mid-typing-stream —
+// notably "+=" on the Num layer, where LT0/LM0 are PLUS/EQUAL. timeout = 50
+// matches the repo's COMBO_TERM.
+ZMK_COMBO(num_lock_win, &tog U_NUM,  LT0 LM0, U_NUM,  50, 150)
+ZMK_COMBO(num_lock_mac, &tog U_MNUM, LT0 LM0, U_MNUM, 50, 150)
+ZMK_COMBO(nav_lock_win, &tog U_NAV,  RT0 RM0, U_NAV,  50, 150)
+ZMK_COMBO(nav_lock_mac, &tog U_MNAV, RT0 RM0, U_MNAV, 50, 150)
+
