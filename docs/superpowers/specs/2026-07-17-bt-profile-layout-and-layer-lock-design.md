@@ -135,39 +135,47 @@ variantes Mac (**MNav, MNum**).
 
 ### Architecture
 
-**100% ZMK natif, zéro code C.** On utilise le behavior `&tog LAYER` (toggle layer).
+**100% ZMK natif, zéro code C.** On utilise le behavior `&tog LAYER` (toggle layer),
+déclenché par des **combos restreints au layer concerné** (plutôt que de consommer des
+touches libres). Les combos réutilisent la macro `ZMK_COMBO(nom, binding, positions,
+layers)` déjà employée dans le repo (`custom_combo.dtsi`, `miryoku.dtsi`), avec les alias
+de position de zmk-helpers.
 
-Sur chaque layer verrouillable, on ajoute une touche `&tog` pointant vers **lui-même** :
+**Convention (unique et symétrique)** : le combo de lock d'un layer = la paire
+**haut + home de la colonne index**, sur la **main opposée** au pouce qui active le layer,
+et **restreint à ce layer**.
 
-| Layer | Touche à ajouter |
-|---|---|
-| `U_NAV` | `&tog U_NAV` |
-| `U_NUM` | `&tog U_NUM` |
-| `U_MNAV` | `&tog U_MNAV` |
-| `U_MNUM` | `&tog U_MNUM` |
+- **Lock Num** — Num est activé par le pouce **droit** (RET) → combo côté **gauche** :
+  **B + G** = positions `LT4 LM4`.
+- **Lock Nav** — Nav est activé par le pouce **gauche** (SPACE) → combo côté **droit** :
+  **J + M** = positions `RT0 RM0`.
+
+Soit 4 combos (une variante Win + une Mac par layer) :
+
+| Combo | Positions | Layer (restriction) | Binding |
+|---|---|---|---|
+| `num_lock_win` | `LT4 LM4` (B+G) | `U_NUM` | `&tog U_NUM` |
+| `num_lock_mac` | `LT4 LM4` (B+G) | `U_MNUM` | `&tog U_MNUM` |
+| `nav_lock_win` | `RT0 RM0` (J+M) | `U_NAV` | `&tog U_NAV` |
+| `nav_lock_mac` | `RT0 RM0` (J+M) | `U_MNAV` | `&tog U_MNAV` |
 
 ### Flux d'usage
 
 1. Tenir le pouce d'activation (ex : Space → Nav actif momentanément).
-2. Taper la touche `&tog U_NAV` d'un doigt libre → Nav est togglé ON.
+2. Presser le combo (ex : J+M ensemble) d'une main libre → `&tog U_NAV` → Nav togglé ON.
 3. Lâcher le pouce → Nav reste actif (le toggle est indépendant du hold-tap).
-4. La touche lock est toujours accessible (Nav actif) → la re-taper déverrouille et
-   revient à la base.
+4. Le combo reste accessible (Nav actif) → le re-presser déverrouille et revient à la base.
 
-### Placement
+### Notes de conception
 
-Chaque layer cible possède des slots `U_NA` libres (vérifié dans `custom_config.h`).
-La touche lock sera placée à une position **stable et côté main opposée** au pouce
-d'activation (pour pouvoir la taper avant de lâcher le pouce). Position exacte finalisée
-au plan d'implémentation. Candidats identifiés :
-
-- `U_NAV` / `U_MNAV` : slot `U_NA` pinky haut-gauche (activé par le pouce gauche → main
-  gauche libre).
-- `U_NUM` / `U_MNUM` : Num est activé par le pouce droit (RET), chiffres à gauche → viser
-  un slot `U_NA` accessible.
-
-`U_NAV`, `U_NUM` et leurs variantes Mac sont tous déjà redéfinis dans `custom_config.h` :
-aucune redéfinition de layer par défaut Miryoku n'est nécessaire.
+- **Restriction par layer indispensable** : chaque combo n'est actif que sur son layer
+  cible, donc pas de déclenchement pendant la frappe normale sur la base. Les touches
+  individuelles sous les positions du combo gardent leur fonction quand pressées seules.
+- **Timeout** : réutiliser `COMBO_TERM` (50 ms) du repo ; ajouter un `require-prior-idle`
+  si des déclenchements accidentels apparaissent en pratique (à ajuster au test).
+- **Aucune modification des bindings de layer** : les combos s'ajoutent sans toucher au
+  contenu des layers. `U_NAV`, `U_NUM` et leurs variantes Mac sont déjà custom ; aucun
+  layer par défaut Miryoku à redéfinir.
 
 ### Interaction `&tog` × système de base `&to`
 
@@ -179,9 +187,9 @@ voulu (pas de layer fantôme qui traîne après un switch Win↔Mac).
 
 Build + flash + test manuel :
 
-1. Tenir Space (Nav), taper la touche lock, lâcher Space → vérifier que Nav reste actif.
-2. Re-taper la touche lock → vérifier retour à la base.
-3. Répéter pour Num, côté Win et côté Mac.
+1. Tenir Space (Nav), presser le combo J+M, lâcher Space → vérifier que Nav reste actif.
+2. Re-presser le combo J+M → vérifier retour à la base.
+3. Répéter pour Num (combo B+G), côté Win et côté Mac.
 4. Verrouiller Nav puis changer de base (Win↔Mac) → vérifier que le lock se libère.
 
 ---
